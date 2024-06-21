@@ -9,6 +9,11 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
         }
         label, input {
             display: block;
@@ -20,7 +25,7 @@
     </style>
 </head>
 <body>
-    <h1>Calculador de Horas Laborales</h1>
+    <h1>Calculadora de Horas</h1>
     
     <label for="start-date">Fecha de inicio:</label>
     <input type="date" id="start-date">
@@ -34,7 +39,7 @@
     <label for="end-time">Hora final (hh:mm):</label>
     <input type="time" id="end-time">
     
-    <button onclick="calculateWorkedTime()">Calcular Tiempo Trabajado</button>
+    <button onclick="calculateWorkedTime()">Calcular Tiempo Transcurrido</button>
     
     <h2>Resultados:</h2>
     <p id="result"></p>

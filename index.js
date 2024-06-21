@@ -62,7 +62,7 @@ function calculateWorkedTime() {
     const hours = Math.floor(totalMinutes / 60);
     const minutes = Math.floor(totalMinutes % 60);
 
-    document.getElementById('result').textContent = `Horas trabajadas: ${hours} horas y ${minutes} minutos.`;
+    document.getElementById('result').textContent = `Tiempo Transcurrido: ${hours} horas y ${minutes} minutos.`;
 }
 
 function convertToMinutes(time) {
