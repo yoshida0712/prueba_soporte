@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculador Avanzado de Horas Laborales</title>
+    <title>Calculador de Horas Hábiles</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,10 +22,6 @@
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 30px;
-        }
-        label, input {
-            display: block;
-            margin: 10px 0;
         }
         button {
             margin: 15px 0;
@@ -56,20 +51,29 @@
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-        h1, h2 {
-            color: #333;
+        .holiday {
+            background-color: #ffecec;
+        }
+        .weekend {
+            background-color: #f0f0ff;
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Calculador Avanzado de Horas Laborales</h1>
+        <h1>Calculador de Horas Hábiles</h1>
         
         <div class="input-section">
             <h2>Cargar archivo Excel</h2>
             <input type="file" id="file_upload" accept=".xlsx,.xls" />
             <button onclick="processExcel()">Procesar Archivo</button>
+            
+            <div style="margin-top: 15px;">
+                <h3>Horario Laboral Configurado:</h3>
+                <p><strong>Lunes-Viernes:</strong> 8:00-12:00 y 14:00-18:00</p>
+                <p><strong>Sábados:</strong> 8:00-12:00</p>
+                <p><strong>Domingos y festivos:</strong> No laborables</p>
+            </div>
         </div>
 
         <div id="results-section" style="display: none;">
@@ -77,11 +81,10 @@
             <table id="tabla-resultados">
                 <thead>
                     <tr>
-                        <th>Fecha/Hora Inicio</th>
-                        <th>Fecha/Hora Fin</th>
-                        <th>Horas Laborales</th>
-                        <th>Minutos Laborales</th>
-                        <th>Días Laborales</th>
+                        <th>Hora de creación</th>
+                        <th>Hora de término</th>
+                        <th>Horas Hábiles</th>
+                        <th>Minutos Hábiles</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -89,7 +92,7 @@
         </div>
     </div>
     
-    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="index2.js"></script>
 </body>
-
 </html>
